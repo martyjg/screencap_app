@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :screenshots
   devise_for :users
-  root to: "home#index"
+  root to: "screenshots#index"
 end

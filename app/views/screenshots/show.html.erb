@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @screenshot.image %>
+</p>
+
+<p>
+  <strong>Movie:</strong>
+  <%= @screenshot.movie %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @screenshot.category %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @screenshot.user %>
+</p>
+
+<%= link_to 'Edit', edit_screenshot_path(@screenshot) %> |
+<%= link_to 'Back', screenshots_path %>

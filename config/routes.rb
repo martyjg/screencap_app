@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/index'
-
-  get 'users/show'
-
+  root to: "screenshots#index"
   resources :screenshots
   devise_for :users
-  root to: "screenshots#index"
+  resources :users, only: [:index, :show]
 end

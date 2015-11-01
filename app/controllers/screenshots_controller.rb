@@ -24,7 +24,7 @@ class ScreenshotsController < ApplicationController
   # POST /screenshots
   # POST /screenshots.json
   def create
-    @screenshot = Screenshot.new(screenshot_params)
+    @screenshot = current_user.screenshots.new(screenshot_params)
 
     respond_to do |format|
       if @screenshot.save

@@ -16,7 +16,7 @@
   <tbody>
     <% @screenshots.each do |screenshot| %>
       <tr>
-        <td><%= screenshot.image %></td>
+        <td><%= image_tag screenshot.screenshot_image %></td>
         <td><%= screenshot.movie %></td>
         <td><%= screenshot.category %></td>
         <td><%= screenshot.user %></td>

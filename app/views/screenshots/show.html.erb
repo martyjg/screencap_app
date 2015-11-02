@@ -17,8 +17,13 @@
 
 <p>
   <strong>User:</strong>
-  <%= link_to @screenshot.user.username, user_path(@screenshot.user) %>
+  <%= link_to @screenshot.user.username, @screenshot.user %>
 </p>
+
+<%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @screenshot } %>
+
+
+<%= render partial: 'comments/form', locals: { commentable: @screenshot } %>
 
 <%= link_to 'Edit', edit_screenshot_path(@screenshot) %> |
 <%= link_to 'Back', screenshots_path %>

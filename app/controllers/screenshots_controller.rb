@@ -10,6 +10,7 @@ class ScreenshotsController < ApplicationController
   # GET /screenshots/1
   # GET /screenshots/1.json
   def show
+    @comments = @screenshot.comments
   end
 
   # GET /screenshots/new
@@ -71,5 +72,5 @@ class ScreenshotsController < ApplicationController
     def screenshot_params
       params.require(:screenshot).permit(:image, :movie, :category, :user_id, :screenshot_image)
     end
-end
+  end
 

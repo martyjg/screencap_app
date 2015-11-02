@@ -3,8 +3,10 @@
 <%= @user.username %>
 <%= @user.email %>
 
+<% if @user != current_user %>
 <%= link_to "Upvote", like_user_path(@user), method: :put %>
 <%= link_to "Downvote", dislike_user_path(@user), method: :put %>
+<% end %>
 
 <h2>Following</h2>
 <% @user.find_up_voted_items.each do |user| %>

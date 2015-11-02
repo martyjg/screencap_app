@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable
 
   has_many :screenshots
+  acts_as_votable
+  acts_as_voter
 end

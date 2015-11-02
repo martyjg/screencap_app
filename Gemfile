@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'acts_as_commentable'
+gem 'carrierwave', '0.10.0'
 gem 'foundation-rails'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'devise'

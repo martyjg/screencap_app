@@ -2,7 +2,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @screenshot.image %>
+  <img src=<%= @screenshot.image %>> 
 </p>
 
 <p>
@@ -17,7 +17,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @screenshot.user %>
+  <%= link_to @screenshot.user.username, user_path(@screenshot.user) %>
 </p>
 
 <%= link_to 'Edit', edit_screenshot_path(@screenshot) %> |

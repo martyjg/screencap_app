@@ -5,3 +5,8 @@
 
 <%= link_to "Upvote", like_user_path(@user), method: :put %>
 <%= link_to "Downvote", dislike_user_path(@user), method: :put %>
+
+<h2>Following</h2>
+<% @user.find_up_voted_items.each do |user| %>
+  <%= user.username %>
+<% end %>

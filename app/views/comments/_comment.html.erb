@@ -3,6 +3,9 @@
     <li><%= link_to comment.user.username, comment.user %></li>
     <li><%= time_ago_in_words(comment.created_at) + " ago" %></li>
     <li><%= comment.comment %></li>
+    <li><%= "Current rating: " + comment.get_upvotes.size.to_s %></li>
+    <li><%= link_to "Rate Up", like_comment_path(comment), method: :put %></li>
+    <li><%= link_to "Rate Down", dislike_comment_path(comment), method: :put %></li>
     <li><%= link_to 'Delete Comment', comment_path(comment, commentable_type: commentable.class.to_s.underscore, commentable_id: commentable.id), method: :delete, data: { confirm: 'Are you sure?' } %></li>
   </ul>
 </li> 

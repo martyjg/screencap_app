@@ -1,6 +1,18 @@
 class CommentsController < ApplicationController
   before_action :set_commentable
   
+  def upvote
+    @comment = Comment.find(params[:id])
+    @comment.upvote_by current_user
+    redirect_to @comment.user
+  end
+
+  def downvote
+    @comment = Comment.find(params[:id])
+    @comment.downvote_by current_user
+    redirect_to @comment.user
+  end
+
   def create
     @comment = @commentable.comments.build(comments_params)
     @comment.user = current_user

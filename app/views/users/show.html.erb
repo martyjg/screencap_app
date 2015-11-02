@@ -12,3 +12,8 @@
 <% @user.find_up_voted_items.each do |user| %>
   <%= link_to user.username, user_path(user) %>
 <% end %>
+
+<h2>Rated up</h2>
+<% @user.find_up_voted_items.each do |caption| %>
+<%= comment %>
+<% end %>

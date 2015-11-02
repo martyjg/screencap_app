@@ -10,10 +10,15 @@
 
 <h2>Following</h2>
 <% @user.find_up_voted_items.each do |user| %>
-  <%= link_to user.username, user_path(user) %>
+<% if user.is_a? User %>
+<%= link_to user.username, user_path(user) %>
+<% end %>
 <% end %>
 
-<h2>Rated up</h2>
+<h2>Rated Up</h2>
 <% @user.find_up_voted_items.each do |caption| %>
-<%= comment %>
+<% if caption.is_a? Comment %>
+<%= caption.comment %>
 <% end %>
+<% end %>
+

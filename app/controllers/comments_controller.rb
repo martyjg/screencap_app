@@ -36,11 +36,13 @@ class CommentsController < ApplicationController
   end
   
   protected
-    def set_commentable
+  def set_commentable
+    if params[:commentable_type].present?
       @commentable = params[:commentable_type].camelize.constantize.find(params[:commentable_id])
     end
+  end
 
-    def comments_params
-      params.require(:comment).permit(:title, :comment)
-    end
+  def comments_params
+    params.require(:comment).permit(:title, :comment)
+  end
 end

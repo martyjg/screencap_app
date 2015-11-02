@@ -2,7 +2,7 @@
 
 <p>
   <strong>Image:</strong>
-  <img src=<%= @screenshot.image %>> 
+  <%= image_tag @screenshot.screenshot_image.url %>
 </p>
 
 <p>
@@ -22,3 +22,5 @@
 
 <%= link_to 'Edit', edit_screenshot_path(@screenshot) %> |
 <%= link_to 'Back', screenshots_path %>
+
+

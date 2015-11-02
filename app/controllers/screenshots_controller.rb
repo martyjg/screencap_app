@@ -69,7 +69,7 @@ class ScreenshotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def screenshot_params
-      params.require(:screenshot).permit(:image, :movie, :category, :user_id, :graffiti_image)
+      params.require(:screenshot).permit(:image, :movie, :category, :user_id, :screenshot_image)
     end
 end
 

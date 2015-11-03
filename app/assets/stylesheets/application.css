@@ -17,10 +17,19 @@
  */
 
 .top-bar, main {
- width: 960px;
- margin: 0 auto;
+   width: 960px;
+   margin: 0 auto;
 }
 
 header {
-  background-color: #333333;
+  background-color: #141414;
+}
+
+@media only screen and (max-width: 640px) {
+
+  .top-bar, main {
+   width: 320px;
+   margin: 0 auto;
+ }
+
 }

@@ -32,7 +32,7 @@
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="#">ScreenCapp</a></h1>
+          <h1><%= link_to "ScreenCapp", root_path %></h1>
         </li>
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -42,14 +42,19 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <li class="active"><%= link_to "Screenshots", screenshots_path %></li>
+          <% if current_user %>
           <li class="has-dropdown">
-            <a href="#" class="drop-button">Right Button Dropdown</a>
+            <a href="#" class="drop-button">Menu</a>
             <ul class="dropdown">
               <li><%= link_to "My Profile", current_user %></li>
-              <li><a href="#">First link in dropdown</a></li>
-              <li class="active"><a href="#">Dropdown Active button</a></li>
+              <li><%= link_to "New Screenshot", new_screenshot_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
+          <% else %>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <% end %>
         </ul>
 
 
@@ -60,22 +65,6 @@
     </section>
   </nav>
 </header>
-
-
-<nav>
-  <ul>
-    <li><%= link_to "Users", users_path %></li>
-    <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "Screenshots", screenshots_path %></li>
-    <% if current_user %>
-    <li><%= link_to "New Screenshot", new_screenshot_path %></li>
-    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-    <li><%= link_to "Register", new_user_registration_path %></li>
-    <li><%= link_to "Login", new_user_session_path %></li>
-    <% end %>
-  </ul>
-</nav>
 
 <main>
   <%= yield %>

@@ -19,7 +19,7 @@
         <td><%= image_tag screenshot.screenshot_image %></td>
         <td><%= screenshot.movie %></td>
         <td><%= screenshot.category %></td>
-        <td><%= screenshot.user %></td>
+        <td><%= screenshot.user.username %></td>
         <td><%= link_to 'Show', screenshot %></td>
         <td><%= link_to 'Edit', edit_screenshot_path(screenshot) %></td>
         <td><%= link_to 'Destroy', screenshot, method: :delete, data: { confirm: 'Are you sure?' } %></td>

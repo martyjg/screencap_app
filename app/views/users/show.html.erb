@@ -12,6 +12,7 @@
 <% @user.find_up_voted_items.each do |user| %>
 <% if user.is_a? User %>
 <%= link_to user.username, user_path(user) %>
+<br />
 <% end %>
 <% end %>
 
@@ -19,6 +20,7 @@
 <% @user.find_up_voted_items.each do |caption| %>
 <% if caption.is_a? Comment %>
 <%= caption.comment %>
+<br />
 <% end %>
 <% end %>
 

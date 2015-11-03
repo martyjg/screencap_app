@@ -4,13 +4,13 @@ class CommentsController < ApplicationController
   def upvote
     @comment = Comment.find(params[:id])
     @comment.upvote_by current_user
-    redirect_to @comment.user
+    redirect_to screenshot_path(@comment.screenshot_id)
   end
 
   def downvote
     @comment = Comment.find(params[:id])
     @comment.downvote_by current_user
-    redirect_to @comment.user
+    redirect_to screenshot_path(@comment.screenshot_id)
   end
 
   def create

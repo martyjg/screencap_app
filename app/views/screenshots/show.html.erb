@@ -20,6 +20,17 @@
   <%= link_to @screenshot.user.username, @screenshot.user %>
 </p>
 
+<% highest = 0 %>
+<% top_voted_caption = "" %>
+<% @comments.each do |caption| %>
+  <% if caption.get_upvotes.size > highest %>
+    <% highest = caption.get_upvotes.size %>
+    <% top_voted_caption = caption %>
+  <% end %>
+<% end %>
+<%= top_voted_caption.comment %>
+
+
 <%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @screenshot } %>
 
 

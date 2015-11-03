@@ -1,5 +1,7 @@
 class ScreenshotsController < ApplicationController
   before_action :set_screenshot, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:index]
+
 
   # GET /screenshots
   # GET /screenshots.json

@@ -17,3 +17,6 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+$('.drop-button').click(function(event){
+    event.preventDefault();
+});

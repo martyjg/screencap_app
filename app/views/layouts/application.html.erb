@@ -19,6 +19,15 @@
   </div>
   <% end %>
 
+  <script src="/js/vendor/jquery.js"></script>
+  <script src="/js/foundation/foundation.js"></script>
+  <script src="/js/foundation/foundation.topbar.js"></script>
+  <script src="/js/vendor/fastclick.js"></script>
+
+  <script>
+    $(document).foundation();
+  </script>
+
   <header>
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
@@ -32,9 +41,9 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li class="active"><a href="screenshots#index">Screenshots</a></li>
+          <li class="active"><%= link_to "Screenshots", screenshots_path %></li>
           <li class="has-dropdown">
-            <a href="#">Right Button Dropdown</a>
+            <a href="#" class="drop-button">Right Button Dropdown</a>
             <ul class="dropdown">
               <li><%= link_to "My Profile", current_user %></li>
               <li><a href="#">First link in dropdown</a></li>

@@ -16,7 +16,11 @@
 
  */
 
-.top-bar, body {
+.top-bar, main {
  width: 960px;
  margin: 0 auto;
+}
+
+header {
+  background-color: #333333;
 }

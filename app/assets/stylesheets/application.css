@@ -16,13 +16,22 @@
 
  */
 
-.top-bar, main {
-   width: 960px;
-   margin: 0 auto;
-}
 
 header {
   background-color: #141414;
+}
+
+.top-bar, main {
+  width: 960px;
+  margin: 0 auto;
+}
+
+h2, h1, form {
+  text-align: center;
+}
+
+.screenshot-index-box {
+  margin: 20px 0;
 }
 
 .indexed-image {
@@ -30,7 +39,8 @@ header {
 }
 
 .indexed-top-comment {
-  font-size: 20px;
+  text-align: center;
+  font-size: 10px;
   color: yellow;
   position: absolute;
   left: 50%;
@@ -38,11 +48,28 @@ header {
   bottom: 40px;
 }
 
-@media only screen and (max-width: 640px) {
+form .field {
+  font-size: 10px;
+}
 
+@media only screen and (min-width: 640px) {
+  .field {
+    margin: 0 200px;
+  }
+
+  form .field {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .indexed-top-comment {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
   .top-bar, main {
    width: 320px;
    margin: 0 auto;
  }
-
 }

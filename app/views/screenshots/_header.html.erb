@@ -1,0 +1,5 @@
+<div class="screenshot-index-header">
+  <li><%= image_tag screenshot.user.profile_picture, class:"profile-picture-feed" %></li>
+  <li><%= link_to screenshot.user.username, screenshot.user %></li>
+  <li><%= time_ago_in_words(screenshot.created_at) + " ago" %></li>
+</div>

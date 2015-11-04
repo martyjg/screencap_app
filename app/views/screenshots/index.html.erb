@@ -1,23 +1,4 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <div class="small-12 columns">
-    <% @screenshots.each do |screenshot| %>
-    <div class="screenshot-index-box">
-      <div class="screenshot-index-header">
-        <li><%= image_tag screenshot.user.profile_picture, class:"profile-picture-feed" %></li>
-        <li><%= link_to screenshot.user.username, screenshot.user %></li>
-        <li><%= time_ago_in_words(screenshot.created_at) + " ago" %></li>
-      </div>
-      <div class="indexed-image"><%= image_tag screenshot.screenshot_image %>
-        <% if screenshot.comments.size > 0 %>
-        <div class="indexed-top-comment">[<%= screenshot.comments.first.comment %>]
-        </div>
-        <% else %>
-        <li><%= link_to "add caption", screenshot %></li>
-        <% end %>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>
+
+<%= render partial: '/feed', collection: @screenshots %>

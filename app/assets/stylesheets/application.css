@@ -16,6 +16,13 @@
 
  */
 
+body {
+  background-color: #E2E8FF;
+}
+
+li {
+list-style-type: none;
+}
 
 header {
   background-color: #141414;
@@ -32,6 +39,9 @@ h2, h1, form {
 
 .screenshot-index-box {
   margin: 20px 0;
+  background-color: white;
+  border: 1px solid #edeeee;
+  /*border: 1px solid grey;*/
 }
 
 .indexed-image {
@@ -58,6 +68,15 @@ form .field {
 
 .small-screen-size li {
   display: block;
+}
+
+.profile_picture_show {
+  border-radius: 50%;
+}
+
+.profile_picture_feed {
+  border-radius: 50%;
+  width: 40px;
 }
 
 @media only screen and (min-width: 640px) {

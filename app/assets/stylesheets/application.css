@@ -25,6 +25,19 @@ header {
   background-color: #141414;
 }
 
+.indexed-image {
+  position: relative;
+}
+
+.indexed-top-comment {
+  font-size: 20px;
+  color: yellow;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 40px;
+}
+
 @media only screen and (max-width: 640px) {
 
   .top-bar, main {

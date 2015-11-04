@@ -4,13 +4,15 @@
   <div class="small-12 columns">
     <% @screenshots.each do |screenshot| %>
     <div class="screenshot-index-box">
-      <%= image_tag screenshot.screenshot_image %>
+      <div class="indexed-image"><%= image_tag screenshot.screenshot_image %>
+        <% if screenshot.comments.size > 0 %>
+        <div class="indexed-top-comment">[<%= screenshot.comments.first.comment %>]
+        </div>
+        <% else %>
+        <li><%= link_to "add caption", screenshot %></li>
+        <% end %>
+      </div>
       <li><%= link_to "posted by " + screenshot.user.username, screenshot.user %></li>
-      <% if screenshot.comments.size > 0 %>
-      <li><%= screenshot.comments.first.comment %></li>
-      <% else %>
-      <li><%= link_to "add caption", screenshot %></li>
-      <% end %>
     </div>
     <% end %>
   </div>

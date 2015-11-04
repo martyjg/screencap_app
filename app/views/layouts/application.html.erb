@@ -13,11 +13,6 @@
 </head>
 
 <body>
-  <% flash.each do |name, message| %>
-  <div class="flash-message flash-message-<%= name %>">
-    <%= message %>
-  </div>
-  <% end %>
 
   <script src="/js/vendor/jquery.js"></script>
   <script src="/js/foundation/foundation.js"></script>
@@ -34,13 +29,10 @@
         <li class="name">
           <h1><%= link_to "ScreenCapp", root_path %></h1>
         </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
-
       <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
+        <ul class="right full-screen-size">
           <li class="active"><%= link_to "Screenshots", screenshots_path %></li>
           <% if current_user %>
           <li class="has-dropdown">
@@ -56,19 +48,24 @@
           <li><%= link_to "Login", new_user_session_path %></li>
           <% end %>
         </ul>
+        <ul class="right small-screen-size">
+            <li class="active"><%= link_to "Screenshots", screenshots_path %></li>
+            <% if current_user %>
+            <li><%= link_to "My Profile", current_user %></li>
+            <li><%= link_to "New Screenshot", new_screenshot_path %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to "Register", new_user_registration_path %></li>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <% end %>
+        </ul>
+      </section>
+    </nav>
+  </header>
 
-
-        <!-- Left Nav Section -->
-<!--       <ul class="left">
-        <li><a href="#">Left Nav Button</a></li>
-      </ul> -->
-    </section>
-  </nav>
-</header>
-
-<main>
-  <%= yield %>
-</main>
+  <main>
+    <%= yield %>
+  </main>
 
 </body>
 </html>

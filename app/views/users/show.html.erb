@@ -15,17 +15,12 @@
       <% else %>
         <%= link_to "Follow", like_user_path(@user), method: :put, class:"follow-button" %>
       <% end %>
+      <% else %>
+      <%= link_to "Edit My Profile", edit_user_registration_path, class:"edit-profile-button" %>
     <% end %>
     </div>
   </div>
 </div>
-
-
-
-
-<% if @user == current_user %>
-<%= link_to "Edit My Profile", edit_user_registration_path %>
-<% end %>
 
 <div class="row">
   <div class="small-12 columns">

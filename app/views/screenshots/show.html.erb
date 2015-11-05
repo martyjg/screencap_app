@@ -2,35 +2,15 @@
 
 
 <div class="screenshot-show-box">
-<%= render partial: 'header', :locals => {:screenshot => @screenshot} %>
+  <%= render partial: 'header', :locals => {:screenshot => @screenshot} %>
 
   <%= image_tag @screenshot.screenshot_image %>
-  </div>
-
-<p>
-  <strong>User:</strong>
-  <%= link_to @screenshot.user.username, @screenshot.user %>
-</p>
-
-<% if @comments.size > 0 %>
-  <% highest = 0 %>
-  <% top_voted_caption = "" %>
-  <% @comments.each do |caption| %>
-    <% if caption.get_upvotes.size >= highest %>
-      <% highest = caption.get_upvotes.size %>
-      <% top_voted_caption = caption %>
-    <% end %>
+  <% if @screenshot.user == current_user %>
+  <%= link_to 'Edit Screenshot', edit_screenshot_path(@screenshot) %>
   <% end %>
-  <%= top_voted_caption.comment %>
-<% end %>
+  <%= render partial: 'comments/form', locals: { commentable: @screenshot } %>
+  <%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @screenshot } %>
 
-
-<%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @screenshot } %>
-
-
-<%= render partial: 'comments/form', locals: { commentable: @screenshot } %>
-
-<%= link_to 'Edit', edit_screenshot_path(@screenshot) %> |
-<%= link_to 'Back', screenshots_path %>
+</div>
 
 

@@ -1,5 +1,9 @@
 <div class="screenshot-index-header">
+  <% if screenshot.user.image.present? %>
+  <li><%= image_tag screenshot.user.image, class:"profile-picture-feed" %></li>
+  <% else %>
   <li><%= image_tag screenshot.user.profile_picture, class:"profile-picture-feed" %></li>
+  <% end %>
   <li><%= link_to screenshot.user.username, screenshot.user %></li>
   <div class="time-display"><li><%= time_ago_in_words(screenshot.created_at) + " ago" %></li></div>
 </div>

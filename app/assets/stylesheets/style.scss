@@ -2,9 +2,9 @@
   font-family: 'AudimatBoldItalic';
   src: asset-url('AUdimat-BoldItalic.eot');
   src: asset-url('AUdimat-BoldItalic.eot?#iefix') format('embedded-opentype'),
-    asset-url('AUdimat-BoldItalic.svg#icomoon') format('svg'),
-    asset-url('AUdimat-BoldItalic.woff') format('woff'),
-    asset-url('AUdimat-BoldItalic.ttf') format('truetype');
+  asset-url('AUdimat-BoldItalic.svg#icomoon') format('svg'),
+  asset-url('AUdimat-BoldItalic.woff') format('woff'),
+  asset-url('AUdimat-BoldItalic.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,9 +13,9 @@
   font-family: 'AudimatBold';
   src: asset-url('AUdimat-Bold.eot');
   src: asset-url('AUdimat-Bold.eot?#iefix') format('embedded-opentype'),
-    asset-url('AUdimat-Bold.svg#icomoon') format('svg'),
-    asset-url('AUdimat-Bold.woff') format('woff'),
-    asset-url('AUdimat-Bold.ttf') format('truetype');
+  asset-url('AUdimat-Bold.svg#icomoon') format('svg'),
+  asset-url('AUdimat-Bold.woff') format('woff'),
+  asset-url('AUdimat-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -55,12 +55,36 @@ h2, h1 {
 }
 
 h1 {
-  margin-top: 55px;
+  margin: 55px 0px;
 }
 
-.sign-up-button {
+.sign-up-button, .facebook-button {
   text-align: center;
 }
+
+.facebook-button {
+  margin: 0 auto;
+  height: 48px;
+  width: 200px;
+  font-family: 'AudimatBold';
+  font-size: 16px;
+  border-style: none;
+  background-color: #008CBA;
+  line-height: 48px;
+
+  a {
+    color: #141414;
+  }
+
+  &:hover {
+    background-color: #141414;
+    color: white;
+    a {
+      color: white;
+    }
+  }
+}
+
 
 .screenshot-index-box {
   margin: 35px 0 60px 0;

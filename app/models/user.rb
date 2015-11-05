@@ -6,11 +6,17 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  mount_uploader :profile_picture, ProfilePictureUploader
+  has_many :screenshots
+  has_many :comments
+  has_many :identities, dependent: :destroy
+  acts_as_votable
+  acts_as_voter
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
     identity = Identity.find_for_oauth(auth)
 
     user = signed_in_resource ? signed_in_resource : identity.user
-
     user = create_user(auth) if user.nil?
 
     if identity.user != user
@@ -19,15 +25,9 @@ class User < ActiveRecord::Base
     end
       
     user
-
   end
 
-  mount_uploader :profile_picture, ProfilePictureUploader
-  has_many :screenshots
-  has_many :comments
-  has_many :identities, dependent: :destroy
-  acts_as_votable
-  acts_as_voter
+
 
   private
   def self.create_user(auth)
@@ -43,8 +43,8 @@ class User < ActiveRecord::Base
     # Create the user if it's a new registration
     if user.nil?
       user = User.new(
-        name: auth.extra.raw_info.name,
-        image: auth.info.image || "",
+        username: auth.extra.raw_info.name,
+        image: auth.info.image + "?type=large" || "",
         email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
         password: Devise.friendly_token[0,20]
       )

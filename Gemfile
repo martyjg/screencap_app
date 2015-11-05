@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # gem 'omniauth-oauth2', '1.3.1'
 
 gem 'omniauth', '1.2.2'
-gem 'omniauth-facebook', '2.0.1'
+gem 'omniauth-facebook', '3.0.0'
 gem 'font-awesome-sass'
 gem 'acts_as_commentable'
 gem 'carrierwave', '0.10.0'
@@ -22,6 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  gem 'seed_dump'
 end
 
 group :development do

@@ -153,6 +153,10 @@ form .right {
   font-size: 16px;
 }
 
+.actions {
+  text-align: center;
+}
+
 .screen-index-box form input, .screenshot-show-box form input, form .actions input {
   height: 48px;
   width: 150px;
@@ -237,6 +241,10 @@ h3 {
 .comment-input-box {
   margin: 0;
   padding: 15px;
+}
+
+form li {
+  text-align: center;
 }
 
 @media only screen and (min-width: 640px) {

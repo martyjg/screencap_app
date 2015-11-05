@@ -8,6 +8,7 @@
     <% else %>
       <%= image_tag @user.profile_picture, class:"profile-picture-show" %>
     <% end %>
+    <div class="follow-options">
     <% if @user != current_user %>
       <% if current_user.voted_up_on? @user %>
         <%= link_to "Unfollow", dislike_user_path(@user), method: :put, class:"follow-button" %>
@@ -15,6 +16,7 @@
         <%= link_to "Follow", like_user_path(@user), method: :put, class:"follow-button" %>
       <% end %>
     <% end %>
+    </div>
   </div>
 </div>
 

@@ -247,6 +247,21 @@ form li {
   text-align: center;
 }
 
+.screenshot-submit {
+  margin: 55px auto;
+}
+
+.instructions {
+  li {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+  }
+
+  li:nth-child(even) {
+    margin-bottom: 50px;
+  }
+}
 @media only screen and (min-width: 640px) {
 /*  .field {
     margin: 0 200px;

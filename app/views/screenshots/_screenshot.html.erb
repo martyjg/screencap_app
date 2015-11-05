@@ -1,0 +1,13 @@
+<div class="screenshot-index-box">
+  <% if (current_page? (screenshots_path)) || (current_page? (root_url)) %>
+  <%= render partial: 'header', :locals => {:screenshot => screenshot} %>
+  <% end %>
+  <div class="indexed-image"><%= link_to (image_tag screenshot.screenshot_image), screenshot %>
+    <% if screenshot.comments.size > 0 %>
+    <div class="indexed-top-comment">[<%= screenshot.comments.first.comment %>]
+    </div>
+    <% else %>
+    <li><%= link_to "add caption", screenshot %></li>
+    <% end %>
+  </div>
+</div>

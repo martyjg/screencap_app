@@ -1,5 +1,19 @@
+@font-face {
+  font-family: 'AudimatBoldItalic';
+  src: asset-url('AUdimat-BoldItalic.eot');
+  src: asset-url('AUdimat-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    asset-url('AUdimat-BoldItalic.svg#icomoon') format('svg'),
+    asset-url('AUdimat-BoldItalic.woff') format('woff'),
+    asset-url('AUdimat-BoldItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 body {
   background-color: #E2E8FF;
+  font-family: "AudimatBoldItalic";
 }
 
 li {
@@ -15,12 +29,17 @@ header {
   margin: 0 auto;
 }
 
+.name h1 a {
+  font-family: monospace;
+  color: red;
+}
+
 h2, h1, form {
   text-align: center;
 }
 
 .screenshot-index-box {
-  margin: 30px 0 50px 0;
+  margin: 40px 0 60px 0;
   background-color: white;
   border: 1px solid #edeeee;
   /*border: 1px solid grey;*/
@@ -80,7 +99,18 @@ form input {
   display: block;
 }
 
+h3 {
+  text-align: center;
+  font-style: italic;
+}
+
+.follow-button {
+  text-align: center;
+}
+
 .profile-picture-show {
+  margin: 0 auto;
+  display: block;
   border-radius: 50%;
 }
 

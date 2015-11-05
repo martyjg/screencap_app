@@ -54,15 +54,17 @@ h2, h1, form {
 }
 
 .screenshot-index-box {
-  margin: 40px 0 60px 0;
+  margin: 35px 0 60px 0;
   background-color: white;
   border: 1px solid #edeeee;
+  font-size: 16px;
 }
 
 .screenshot-show-box {
-  margin: 60px 0 60px 0;
+  margin: 55px 0 60px 0;
   background-color: white;
   border: 1px solid #edeeee;
+  font-size: 16px;
 }
 
 .indexed-image {
@@ -99,6 +101,10 @@ h2, h1, form {
     display: inline;
   }
 
+  li:nth-child(2) a {
+    color: #0078a0;
+  }
+
   .time-display {
     margin: 10px 0 0 0;
     float: right;
@@ -111,7 +117,16 @@ form .field {
 }
 
 form input {
-  width: 200px;
+  height: 48px;
+  width: 150px;
+  font-family: 'AudimatBold';
+  font-size: 16px;
+  border-style: none;
+
+  &:hover {
+    background-color: #141414;
+    color: white;
+  }
 }
 
 .full-screen-size li {
@@ -143,12 +158,24 @@ h3 {
   width: 35px;
 }
 
+.edit-button-box {
+  padding: 15px;
+  float: left;
+  height: 48px;
+}
+
 .username-comment {
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-size: 16px;
   border-top: 1px solid #edeeee;
 
   li {
     display: inline;
+  }
+
+  li:first-child a {
+    color: #0078a0;
   }
 
   li:nth-child(2) {
@@ -161,20 +188,13 @@ h3 {
   }
 }
 
+.comment-rating {
+  padding-bottom: 10px;
+}
 
-
-.screenshot-index-header {
-  padding: 10px;
-  height: 55px;
-
-  li {
-    display: inline;
-  }
-
-  .time-display {
-    margin: 10px 0 0 0;
-    float: right;
-  }
+.comment-input-box {
+  margin: 0;
+  padding: 15px;
 }
 
 @media only screen and (min-width: 640px) {

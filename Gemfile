@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# gem 'omniauth-oauth2', '1.3.1'
+
+gem 'omniauth', '1.2.2'
+gem 'omniauth-facebook', '2.0.1'
 gem 'font-awesome-sass'
 gem 'acts_as_commentable'
 gem 'carrierwave', '0.10.0'

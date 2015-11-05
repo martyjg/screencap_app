@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "screenshots#index"
   resources :screenshots
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :comments, only: [:create, :destroy] do
     member do
       put 'like', to: "comments#upvote"

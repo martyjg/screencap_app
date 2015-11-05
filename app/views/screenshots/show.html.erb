@@ -1,19 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Image:</strong>
+
+<div class="screenshot-show-box">
+<%= render partial: 'header', :locals => {:screenshot => @screenshot} %>
+
   <%= image_tag @screenshot.screenshot_image %>
-</p>
-
-<p>
-  <strong>Movie:</strong>
-  <%= @screenshot.movie %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @screenshot.category %>
-</p>
+  </div>
 
 <p>
   <strong>User:</strong>

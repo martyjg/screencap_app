@@ -13,45 +13,51 @@
 </head>
 
 <body>
+
   <header>
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to "ScreenCapp", root_path %></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-      <section class="top-bar-section">
-        <ul class="right full-screen-size">
-          <li class="active"><%= link_to "Screenshots", screenshots_path %></li>
-          <% if current_user %>
-          <li class="has-dropdown">
-            <a href="#" class="drop-button">Menu</a>
-            <ul class="dropdown">
+    <div class="row">
+      <div class="small-12 columns">
+        <nav class="top-bar" data-topbar role="navigation">
+          <ul class="title-area">
+            <li class="name">
+              <h1><%= link_to "ScreenCapp", root_path %></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+          <section class="top-bar-section">
+            <ul class="right full-screen-size">
+              <li class="active"><%= link_to "Screenshots", screenshots_path %></li>
+              <% if current_user %>
+              <li class="has-dropdown">
+                <a href="#" class="drop-button">Menu</a>
+                <ul class="dropdown">
+                  <li><%= link_to "My Profile", current_user %></li>
+                  <li><%= link_to "New Screenshot", new_screenshot_path %></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+              <% else %>
+              <li><%= link_to "Register", new_user_registration_path %></li>
+              <li><%= link_to "Login", new_user_session_path %></li>
+              <% end %>
+            </ul>
+            <ul class="right small-screen-size">
+              <li class="active"><%= link_to "Screenshots", screenshots_path %></li>
+              <% if current_user %>
               <li><%= link_to "My Profile", current_user %></li>
               <li><%= link_to "New Screenshot", new_screenshot_path %></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              <% else %>
+              <li><%= link_to "Register", new_user_registration_path %></li>
+              <li><%= link_to "Login", new_user_session_path %></li>
+              <% end %>
             </ul>
-          </li>
-          <% else %>
-          <li><%= link_to "Register", new_user_registration_path %></li>
-          <li><%= link_to "Login", new_user_session_path %></li>
-          <% end %>
-        </ul>
-        <ul class="right small-screen-size">
-            <li class="active"><%= link_to "Screenshots", screenshots_path %></li>
-            <% if current_user %>
-            <li><%= link_to "My Profile", current_user %></li>
-            <li><%= link_to "New Screenshot", new_screenshot_path %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-            <li><%= link_to "Register", new_user_registration_path %></li>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <% end %>
-        </ul>
-      </section>
-    </nav>
+          </section>
+        </nav>
+      </div>
+    </div>
   </header>
+
 
   <main>
     <%= yield %>

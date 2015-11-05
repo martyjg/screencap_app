@@ -9,11 +9,22 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'AudimatBold';
+  src: asset-url('AUdimat-Bold.eot');
+  src: asset-url('AUdimat-Bold.eot?#iefix') format('embedded-opentype'),
+    asset-url('AUdimat-Bold.svg#icomoon') format('svg'),
+    asset-url('AUdimat-Bold.woff') format('woff'),
+    asset-url('AUdimat-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 body {
   background-color: #E2E8FF;
-  font-family: "AudimatBoldItalic";
+  font-family: "AudimatBold";
 }
 
 li {
@@ -29,8 +40,12 @@ header {
   margin: 0 auto;
 }
 
+.top-bar {
+  padding: 0 16px 0 0px;
+}
+
 .name h1 a {
-  font-family: monospace;
+  font-family: "AudimatBold";
   color: red;
 }
 
@@ -42,7 +57,12 @@ h2, h1, form {
   margin: 40px 0 60px 0;
   background-color: white;
   border: 1px solid #edeeee;
-  /*border: 1px solid grey;*/
+}
+
+.screenshot-show-box {
+  margin: 60px 0 60px 0;
+  background-color: white;
+  border: 1px solid #edeeee;
 }
 
 .indexed-image {
@@ -51,6 +71,7 @@ h2, h1, form {
   li {
     text-align: center;
     line-height: 50px;
+    font-size: 16px;
 
     a {
       padding: 15px;
@@ -62,6 +83,7 @@ h2, h1, form {
 .indexed-top-comment {
   text-align: center;
   font-size: 10px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
   color: yellow;
   position: absolute;
   left: 50%;
@@ -74,11 +96,12 @@ h2, h1, form {
   height: 55px;
 
   li {
-    display: inline-block;
+    display: inline;
   }
 
-  li:nth-child(2) {
-    width: 33.3%;
+  .time-display {
+    margin: 10px 0 0 0;
+    float: right;
   }
 }
 
@@ -131,15 +154,6 @@ h3 {
 
   .small-screen-size li {
     display: none;
-  }
-
-  .screenshot-index-header {
-    padding: 20px;
-    height: 75px;
-
-    li:nth-child(2) {
-      width: 79.7%;
-    }
   }
 
   form .field {

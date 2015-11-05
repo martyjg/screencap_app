@@ -46,10 +46,19 @@ header {
 
 .name h1 a {
   font-family: "AudimatBold";
-  color: red;
 }
 
-h2, h1, form {
+h2, h1 {
+  margin: 0;
+  text-align: center;
+  font-family: "AudimatBold";
+}
+
+h1 {
+  margin-top: 55px;
+}
+
+.sign-up-button {
   text-align: center;
 }
 
@@ -116,7 +125,11 @@ form .field {
   font-size: 10px;
 }
 
-form input {
+form .right {
+  font-size: 16px;
+}
+
+.screen-index-box form input, .screenshot-show-box form input, form .actions input {
   height: 48px;
   width: 150px;
   font-family: 'AudimatBold';
@@ -138,6 +151,7 @@ form input {
 }
 
 h3 {
+  margin: 0;
   text-align: center;
   font-style: italic;
 }

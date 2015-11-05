@@ -1,18 +1,18 @@
 
 <div class="row">
   <div class="small-12 columns username-comment">
-    <%= link_to comment.user.username, comment.user %>
-    <%= comment.comment %>
-  </div>
-  <div class="small-12 columns time-comment-posted">
-    <%= "Posted " + time_ago_in_words(comment.created_at) + " ago" %>
-    <% if comment.user == current_user %>
-    <%= link_to 'Delete Comment', comment_path(comment, commentable_type: commentable.class.to_s.underscore, commentable_id: commentable.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
+    <li><%= link_to comment.user.username, comment.user %></li>
+    <li><%= comment.comment %></li>
+    <li class="time-comment-posted">
+      <%= "Posted " + time_ago_in_words(comment.created_at) + " ago" %>
+      <% if comment.user == current_user %>
+      <%= link_to 'Delete Comment', comment_path(comment, commentable_type: commentable.class.to_s.underscore, commentable_id: commentable.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </li>
   </div>
   <div class="small-12 columns comment-rating">
     <%= "Current rating: " + comment.get_upvotes.size.to_s %>
-    <%= link_to "Rate Up", like_comment_path(comment), method: :put %>
-    <%= link_to "Rate Down", dislike_comment_path(comment), method: :put %>
+    <%= link_to "", like_comment_path(comment), method: :put, class:"fa fa-chevron-circle-up" %>
+    <%= link_to "", dislike_comment_path(comment), method: :put, class:"fa fa-chevron-circle-down" %>
   </div>
 </div>

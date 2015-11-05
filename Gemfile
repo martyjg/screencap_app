@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'font-awesome-sass'
 gem 'acts_as_commentable'
 gem 'carrierwave', '0.10.0'
 gem 'foundation-rails'

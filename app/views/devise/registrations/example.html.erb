@@ -1,0 +1,11 @@
+<% if @comments.size > 0 %>
+  <% highest = 0 %>
+  <% top_voted_caption = "" %>
+  <% @comments.each do |caption| %>
+    <% if caption.get_upvotes.size >= highest %>
+      <% highest = caption.get_upvotes.size %>
+      <% top_voted_caption = caption %>
+    <% end %>
+  <% end %>
+  <%= top_voted_caption.comment %>
+<% end %>
